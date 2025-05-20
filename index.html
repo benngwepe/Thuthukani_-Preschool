@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Bright Futures Preschool - Safe, fun, and educational preschool for your child. Enroll today or support our mission.">
+  <title>Bright Futures Preschool</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Bright Futures Preschool</h1>
+    <p>Where Little Minds Grow Big Dreams</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#enroll">Enroll</a>
+    <a href="#donate">Donate</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Fun. Safe. Educational.</h2>
+    <p>Explore our preschool in pictures and learn more about our mission.</p>
+  </section>
+
+  <section class="carousel">
+    <div class="carousel-track" id="carousel-track">
+      <div class="carousel-slide"><img src="images/133647172_1589709997888095_4573194180075196931_n.jpg" alt="Classroom"></div>
+      <div class="carousel-slide"><img src="images/133967586_1589709444554817_5546737706941914593_n.jpg" alt="Playground"></div>
+      <div class="carousel-slide"><img src="images/149889952_1622475487944879_4654830785443526869_n.jpg" alt="Art Room"></div>
+      <div class="carousel-slide"><img src="images/156957280_1628803157510364_3699689708882154661_n.jpg" alt="Story Time"></div>
+    </div>
+    <div class="carousel-buttons">
+      <button class="carousel-button" onclick="moveSlide(-1)">&#10094;</button>
+      <button class="carousel-button" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+  </section>
+
+  <section class="info-section" id="about">
+    <h2>Why Parents Choose Us</h2>
+    <ul>
+      <li>Qualified, loving teachers</li>
+      <li>Clean, safe facilities</li>
+      <li>Play-based learning</li>
+      <li>Daily reports and open communication</li>
+    </ul>
+  </section>
+
+  <section class="info-section" id="enroll">
+    <h2>Enroll Your Child</h2>
+    <p>We are currently accepting new students! Click the button below to fill out the enrollment form.</p>
+    <a href="enroll.html"><button>Go to Enrollment</button></a>
+  </section>
+
+  <section class="info-section" id="donate">
+    <h2>Support Our Mission</h2>
+    <p>Help us provide better materials and resources for the children. Every donation counts.</p>
+    <a href="donate.html"><button>Donate Now</button></a>
+  </section>
+
+  <section class="info-section" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: contact@brightfutures.org<br>Phone: (123) 456-7890<br>Address: 123 Preschool Ln, Learnville</p>
+  </section>
+
+  <footer>
+    &copy; 2025 Bright Futures Preschool | Designed with ❤️
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+    const track = document.getElementById('carousel-track');
+    const slides = document.querySelectorAll('.carousel-slide');
+
+    function moveSlide(direction) {
+      slideIndex += direction;
+      if (slideIndex < 0) slideIndex = slides.length - 1;
+      if (slideIndex >= slides.length) slideIndex = 0;
+      track.style.transform = 'translateX(' + (-slideIndex * 100) + '%)';
+    }
+
+    setInterval(() => {
+      moveSlide(1);
+    }, 5000);
+  </script>
+</body>
+</html>
